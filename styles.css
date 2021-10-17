@@ -177,3 +177,11 @@ html {
     font-size: 2vw;
     color: var(--table-of-content-text-color);
   }
+
+  .hidden {
+    display: none;
+  }
+  
+  .show {
+    display: flex;
+  }

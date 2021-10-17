@@ -20,6 +20,12 @@ fetch("https://swapi.dev/api/films")
       "[data-id=movie-release-date]"
     );
 
+    const movieButtonFavorite = document.querySelector(
+      "[data-id=movie-favorite]"
+    );
+    const movieFavoriteStar = document.querySelector("[data-id=movie-star]");
+    let movieId;
+
     //Fetching the required movie details
     Array.from(document.getElementsByClassName("js-movie")).forEach((el) => {
       el.addEventListener("click", (event) => {
@@ -36,6 +42,22 @@ fetch("https://swapi.dev/api/films")
             movieProducer.innerText = data.producer;
             movieDirector.innerText = data.director;
             movieReleaseDate.innerText = data.release_date;
+
+            movieFavoriteStar.src = "images/star-regular.svg";
+            movieFavoriteStar.setAttribute("id", "star");
+            movieFavoriteStar.className = "star-img";
+
+            const changingButtonText = () => {
+              movieButtonFavorite.classList.remove("hidden");
+              if (isFavorite == "true") {
+                movieButtonFavorite.innerText = "remove";
+              } else {
+                movieFavoriteStar.className = "hidden";
+                movieButtonFavorite.innerText = "favorite";
+              }
+            };
+
+            changingButtonText();
           });
       });
     });
