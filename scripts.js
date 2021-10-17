@@ -26,6 +26,18 @@ fetch("https://swapi.dev/api/films")
     const movieFavoriteStar = document.querySelector("[data-id=movie-star]");
     let movieId;
 
+    // Function to define the actions when clicking the button
+    const handleClick = () => {
+      movieFavoriteStar.classList.toggle("hidden");
+      if (movieButtonFavorite.innerText == "remove") {
+        movieButtonFavorite.innerText = "favorite";
+        localStorage.removeItem(String(movieId));
+      } else {
+        movieButtonFavorite.innerText = "remove";
+        localStorage.setItem(movieId, true);
+      }
+    };
+
     //Fetching the required movie details
     Array.from(document.getElementsByClassName("js-movie")).forEach((el) => {
       el.addEventListener("click", (event) => {
@@ -47,6 +59,7 @@ fetch("https://swapi.dev/api/films")
             movieFavoriteStar.setAttribute("id", "star");
             movieFavoriteStar.className = "star-img";
 
+            //Changing the text on the button depending the "movie status (favorite or not)"
             const changingButtonText = () => {
               movieButtonFavorite.classList.remove("hidden");
               if (isFavorite == "true") {
@@ -58,6 +71,9 @@ fetch("https://swapi.dev/api/films")
             };
 
             changingButtonText();
+
+            movieButtonFavorite.removeEventListener("click", handleClick);
+            movieButtonFavorite.addEventListener("click", handleClick);
           });
       });
     });
