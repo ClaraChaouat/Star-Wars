@@ -146,6 +146,17 @@ body {
   margin: 0;
 }
 
+/* --------------Color variables----------------- */
+
+:root {
+    --background-blue: #0468bf;
+    --text-color-hover-black: black;
+    --table-of-content-text-color: white;
+    --border-color-bottom: white;
+    --button-background-color: #f2f2f2;
+    --button-hover-color: #d3c5e0;
+  }
+
 .wrapper {
   display: flex;
   width: 100vw;
