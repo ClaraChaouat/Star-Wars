@@ -1,7 +1,4 @@
 # Starwars Project:movie_camera:
-<p align="center">
-  <img width="700" src="./src/images/beerMenuAnimationb.gif"/>
-</p>
 
 ## Description:woman_teacher:
 The aim of this project is to create a web page displaying a list of starwars movies (fetching by an API call) in a table of content. At the click of a movie title, details about the movie will be displayed on the right side of the page.
