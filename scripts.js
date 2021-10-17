@@ -12,4 +12,31 @@ fetch("https://swapi.dev/api/films")
       ulToc.append(li);
     });
 
-});
+    // Defining variables to query the required movie details to be inserted in the html
+    const movieTitle = document.querySelector("[data-id=movie-title]");
+    const movieProducer = document.querySelector("[data-id=movie-producer]");
+    const movieDirector = document.querySelector("[data-id=movie-director]");
+    const movieReleaseDate = document.querySelector(
+      "[data-id=movie-release-date]"
+    );
+
+    //Fetching the required movie details
+    Array.from(document.getElementsByClassName("js-movie")).forEach((el) => {
+      el.addEventListener("click", (event) => {
+        console.log(event);
+        movieId = el.id;
+        fetch(`https://swapi.dev/api/films/${movieId}`)
+          .then((res) => res.json())
+          .then((data) => {
+            const isFavorite = localStorage.getItem(movieId);
+            console.log(isFavorite);
+            console.log(data);
+            console.log(data.title);
+            movieTitle.innerText = data.title;
+            movieProducer.innerText = data.producer;
+            movieDirector.innerText = data.director;
+            movieReleaseDate.innerText = data.release_date;
+          });
+      });
+    });
+  });
