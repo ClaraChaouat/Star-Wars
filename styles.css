@@ -149,13 +149,13 @@ body {
 /* --------------Color variables----------------- */
 
 :root {
-    --background-blue: #0468bf;
-    --text-color-hover-black: black;
-    --table-of-content-text-color: white;
-    --border-color-bottom: white;
-    --button-background-color: #f2f2f2;
-    --button-hover-color: #d3c5e0;
-  }
+  --background-blue: #0468bf;
+  --text-color-hover-black: black;
+  --table-of-content-text-color: white;
+  --border-color-bottom: white;
+  --button-background-color: #f2f2f2;
+  --button-hover-color: #d3c5e0;
+}
 
 .wrapper {
   display: flex;
@@ -233,4 +233,78 @@ body {
 
 .show {
   display: flex;
+}
+
+/* --------------Responsive section----------------- */
+
+@media (max-width: calc(950 / 16 * 1rem)) {
+  /* Tablets */
+
+  .table-of-content-title {
+    font-size: 4vw;
+  }
+
+  .movie {
+    font-size: 4vw;
+  }
+
+  .movie-details {
+    font-size: 6vw;
+  }
+
+  .btn-favorite {
+    width: 30%;
+  }
+
+  .remove-add-btn {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: calc(600 / 16 * 1rem)) {
+  /* Phones */
+
+  .table-of-content-title {
+    font-size: 5vw;
+  }
+
+  .movie {
+    font-size: 5vw;
+  }
+
+  .movie-details {
+    font-size: 6vw;
+  }
+
+  .btn-favorite {
+    width: 50%;
+  }
+
+  .remove-add-btn {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: calc(320 / 16 * 1rem)) {
+  /* Iphone SE*/
+
+  .table-of-content-title {
+    font-size: 4vw;
+  }
+
+  .movie {
+    font-size: 4vw;
+  }
+
+  .movie-details {
+    font-size: 5vw;
+  }
+
+  .btn-favorite {
+    width: 50%;
+  }
+
+  .remove-add-btn {
+    font-size: 3vw;
+  }
 }
