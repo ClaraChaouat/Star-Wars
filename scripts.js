@@ -29,11 +29,11 @@ fetch("https://swapi.dev/api/films")
     // Function to define the actions when clicking the button
     const handleClick = () => {
       movieFavoriteStar.classList.toggle("hidden");
-      if (movieButtonFavorite.innerText == "remove") {
-        movieButtonFavorite.innerText = "favorite";
+      if (movieButtonFavorite.innerText == "Remove") {
+        movieButtonFavorite.innerText = "Favorite";
         localStorage.removeItem(String(movieId));
       } else {
-        movieButtonFavorite.innerText = "remove";
+        movieButtonFavorite.innerText = "Remove";
         localStorage.setItem(movieId, true);
       }
     };
@@ -63,10 +63,10 @@ fetch("https://swapi.dev/api/films")
             const changingButtonText = () => {
               movieButtonFavorite.classList.remove("hidden");
               if (isFavorite == "true") {
-                movieButtonFavorite.innerText = "remove";
+                movieButtonFavorite.innerText = "Remove";
               } else {
                 movieFavoriteStar.className = "hidden";
-                movieButtonFavorite.innerText = "favorite";
+                movieButtonFavorite.innerText = "Favorite";
               }
             };
 
