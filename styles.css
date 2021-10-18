@@ -149,19 +149,22 @@ body {
 /* --------------Color variables----------------- */
 
 :root {
-  --background-blue: #0468bf;
   --text-color-hover-black: black;
-  --table-of-content-text-color: white;
+  --table-of-content-text-color:#959595;
   --border-color-bottom: white;
+  --table-of-content-borders-color:#202020;
   --button-background-color: #f2f2f2;
   --button-hover-color: #d3c5e0;
+  --wrapper-background-color:#242424;
+  --movie-details-text-color:#F2B705;
+
 }
 
 .wrapper {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: var(--background-blue);
+  background-color: var(--wrapper-background-color) ;
 }
 
 /* --------------Table of content style----------------- */
@@ -170,14 +173,16 @@ body {
   width: 30%;
   font-size: 2.5vw;
   padding: 5px 0;
-  border-right: 4px solid white;
+  border-right: 4px solid var(--table-of-content-borders-color);
   color: var(--table-of-content-text-color);
+
 }
 
 .table-of-content-title {
   display: flex;
   justify-content: center;
-  border-bottom: 4px solid var(--border-color-bottom);
+  border-bottom: 4px solid var(--table-of-content-borders-color);
+  padding-bottom: 10px;
 }
 
 .table-of-content-titles-list {
@@ -194,37 +199,77 @@ body {
 }
 
 .movie:hover {
-  color: var(--text-color-hover-black);
+  color: var(--border-color-bottom);
 }
 
 /* --------------Movie details style----------------- */
 
 .movie-details {
   background-color: var(--background-blue);
+  background-color: #242424;
+  position:relative;
   color: var(--table-of-content-text-color);
+  color: var(--movie-details-text-color);
   width: 70%;
-  font-size: 2vw;
+  font-size: 4vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 100000;
 }
 
+.movie-details-title {
+    position: relative;
+    z-index: 10000;
+
+}
+
+.movie-details-list-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.movie-details-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    opacity: 0.3;
+    width:50vw;
+    height: auto;
+    z-index: 1;
+
+}
 .btn-favorite {
   display: flex;
+  position: relative;
+  z-index: 10;
   margin-top: 10px;
-  width: 10%;
+  width: 20%;
+
 }
 
 .remove-add-btn {
-  font-size: 1vw;
+  font-size: 2vw;
+  background-color: #959595;
+  border: 1px solid black;
   color: var(--text-color-hover-black);
   width: 90%;
-  border-radius: 5px;
+  border-radius: 20px;
+  padding:2px 0;
+  margin-right:5px;
 }
 
 .remove-add-btn:hover {
-  background-color: var(--button-hover-color);
+  background-color: var(--movie-details-text-color);
+}
+
+.favorite-start {
+    position: relative;
+    z-index:10;
 }
 
 .hidden {
