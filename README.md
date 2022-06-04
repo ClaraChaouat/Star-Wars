@@ -1,7 +1,7 @@
 # Starwars Project:movie_camera:
 
 ## Description:woman_teacher:
-The aim of this project is to create a web page displaying a list of starwars movies (fetching by an API call) in a table of content. At the click of a movie title, details about the movie will be displayed on the right side of the page.
+The aim of this project is to create a web page displaying a list of starwars movies (fetched by an API call) in a table of content. At the click of a movie title, details about the movie will be displayed on the right side of the page.
 The user can add or remove the movie from favorite by clicking on the button below the movie detail. 
 
 ## Installation:man_mechanic:
